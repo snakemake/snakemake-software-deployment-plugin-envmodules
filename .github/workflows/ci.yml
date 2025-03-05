@@ -66,7 +66,7 @@ jobs:
       - name: Setup envmodules
         run: |
           sudo apt-get update
-          sudo apt-get install -y environment-modules
+          sudo apt-get install -y lmod
           module --help
 
       - name: Run pytest
