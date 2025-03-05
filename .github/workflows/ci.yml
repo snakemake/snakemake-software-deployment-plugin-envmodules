@@ -67,6 +67,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y environment-modules
+          module --help
 
       - name: Run pytest
         run: poetry run coverage run -m pytest
