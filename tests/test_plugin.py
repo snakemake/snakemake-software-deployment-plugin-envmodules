@@ -1,3 +1,4 @@
+import os
 from typing import Optional, Type
 from snakemake_interface_software_deployment_plugins import EnvBase
 from snakemake_interface_software_deployment_plugins.tests import (
@@ -7,6 +8,8 @@ from snakemake_interface_software_deployment_plugins.settings import (
     SoftwareDeploymentSettingsBase,
 )
 from snakemake_software_deployment_plugin_envmodules import Env, EnvSpec, EnvSpecBase
+
+os.environ["MODULEPATH"] = "tests/modules"
 
 
 class TestSoftwareDeployment(TestSoftwareDeploymentBase):

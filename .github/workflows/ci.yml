@@ -90,8 +90,6 @@ jobs:
       - name: Setup envmodules
         run: |
           sudo apt-get install -y modules
-          # inform module system about the place where our module is defined
-          module use tests/modules
 
       - name: Run pytest
         run: poetry run coverage run -m pytest
