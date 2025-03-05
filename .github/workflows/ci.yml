@@ -67,7 +67,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y environment-modules
-          echo "source /etc/profile.d/modules.sh" >> $GITHUB_ENV
+          echo "source /etc/profile.d/modules.sh" >> ~/.bashrc
 
       - name: Run pytest
         run: poetry run coverage run -m pytest
