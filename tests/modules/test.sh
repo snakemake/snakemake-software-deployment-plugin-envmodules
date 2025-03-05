@@ -1,0 +1,3 @@
+function somecmd() {
+    echo "hello";
+}
