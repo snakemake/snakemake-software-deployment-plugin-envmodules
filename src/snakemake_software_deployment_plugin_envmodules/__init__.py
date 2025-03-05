@@ -1,8 +1,6 @@
 from dataclasses import dataclass
 from typing import List, Optional
-from snakemake_interface_software_deployment_plugins import (
-    EnvBase, EnvSpecBase
-)
+from snakemake_interface_software_deployment_plugins import EnvBase, EnvSpecBase
 
 
 @dataclass

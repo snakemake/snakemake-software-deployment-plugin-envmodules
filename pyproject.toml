@@ -3,7 +3,7 @@ name = "snakemake-software-deployment-plugin-envmodules"
 version = "0.1.0"
 description = ""
 readme = "README.md"
-requires-python = "^3.11"
+requires-python = ">=3.11,<4.0"
 dependencies = ["snakemake-interface-software-deployment-plugins @ file:///home/johannes/scms/snakemake-interface-software-deployment-plugins"]
 repository = "https://github.com/your/plugin"
 documentation = "https://snakemake.github.io/snakemake-plugin-catalog/plugins/software-deployment/envmodules.html"
@@ -22,11 +22,10 @@ from = "src"
 
 
 [tool.poetry.group.dev.dependencies]
-black = "^25.1.0"
-flake8 = "^7.1.2"
 coverage = "^7.6.12"
 pytest = "^8.3.5"
 snakemake = "^8.29.0"
+ruff = "^0.9.9"
 
 
 [tool.poetry.dependencies]
