@@ -67,10 +67,11 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y environment-modules
-          echo "source /etc/profile.d/modules.sh" >> ~/.bashrc
 
       - name: Run pytest
-        run: poetry run coverage run -m pytest
+        run: |
+          source /etc/profile.d/modules.sh
+          poetry run coverage run -m pytest
 
       - name: Run Coverage
         run: poetry run coverage report -m
