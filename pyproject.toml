@@ -4,7 +4,7 @@ version = "0.1.0"
 description = ""
 readme = "README.md"
 requires-python = ">=3.11,<4.0"
-dependencies = ["snakemake-interface-software-deployment-plugins >=0.1.0,<1.0.0"]
+dependencies = ["snakemake-interface-software-deployment-plugins >=0.1.1,<1.0.0"]
 repository = "https://github.com/your/plugin"
 documentation = "https://snakemake.github.io/snakemake-plugin-catalog/plugins/software-deployment/envmodules.html"
 [[project.authors]]
