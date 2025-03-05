@@ -70,7 +70,7 @@ jobs:
           which modulecmd
           echo "source /usr/share/modules/init/bash" >> ~/.bashrc
           source ~/.bashrc
-          module --help
+          type module
 
 
       - name: Run pytest
