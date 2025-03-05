@@ -65,6 +65,7 @@ jobs:
 
       - name: Setup envmodules
         run: |
+          sudo apt-get update
           sudo apt-get install -y modules
 
       - name: Run pytest
