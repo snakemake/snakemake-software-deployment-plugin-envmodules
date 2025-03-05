@@ -71,6 +71,7 @@ jobs:
       - name: Run pytest
         run: |
           source /etc/profile.d/modules.sh
+          module --help
           poetry run coverage run -m pytest
 
       - name: Run Coverage
