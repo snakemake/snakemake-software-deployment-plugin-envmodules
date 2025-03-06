@@ -1,6 +1,8 @@
 from dataclasses import dataclass
+import shutil
 from typing import List
 from snakemake_interface_software_deployment_plugins import EnvBase, EnvSpecBase
+from snakemake_interface_common.errors import WorkflowError
 
 
 @dataclass
@@ -9,6 +11,19 @@ class EnvSpec(EnvSpecBase):
 
 
 class Env(EnvBase):
+    def __post_init__(self):
+        # Check if the module command is available
+        self.check()
+
+    @EnvBase.once
+    def check(self) -> None:
+        if not shutil.which("module"):
+            raise WorkflowError(
+                "The module command is not available. "
+                "Please make sure that the environment modules are "
+                "available on your system."
+            )
+
     def decorate_shellcmd(self, cmd: str) -> str:
         # Decorate given shell command such that it runs within the environment.
         # Unclear why that happens.
