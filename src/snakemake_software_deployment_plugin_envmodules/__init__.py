@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 from typing import List
+import subprocess as sp
 from snakemake_interface_software_deployment_plugins import EnvBase, EnvSpecBase
 from snakemake_interface_common.exceptions import WorkflowError
 
@@ -16,7 +17,7 @@ class Env(EnvBase):
 
     @EnvBase.once
     def check(self) -> None:
-        if self.run_cmd("type module").returncode != 0: 
+        if self.run_cmd("type module", stdout=sp.PIPE, stderr=sp.PIPE).returncode != 0:
             raise WorkflowError(
                 "The module command is not available. "
                 "Please make sure that the environment modules are "
