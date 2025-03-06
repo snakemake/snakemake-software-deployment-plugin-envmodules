@@ -2,7 +2,7 @@ from dataclasses import dataclass
 import shutil
 from typing import List
 from snakemake_interface_software_deployment_plugins import EnvBase, EnvSpecBase
-from snakemake_interface_common.errors import WorkflowError
+from snakemake_interface_common.exceptions import WorkflowError
 
 
 @dataclass
