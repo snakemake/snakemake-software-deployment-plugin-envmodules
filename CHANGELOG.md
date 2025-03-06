@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/snakemake/snakemake-software-deployment-plugin-envmodules/compare/v0.1.1...v0.1.2) (2025-03-06)
+
+
+### Miscellaneous Chores
+
+* Release 0.1.2 ([23f078f](https://github.com/snakemake/snakemake-software-deployment-plugin-envmodules/commit/23f078f04ad41b9e8d7eedab470e278992ed16f0))
+
 ## [0.1.1](https://github.com/snakemake/snakemake-software-deployment-plugin-envmodules/compare/v0.1.0...v0.1.1) (2025-03-06)
 
 
