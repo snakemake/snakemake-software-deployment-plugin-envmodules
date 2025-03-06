@@ -1,5 +1,4 @@
-from dataclasses import dataclass
-from typing import Iterable, List, Tuple
+from typing import Iterable, Tuple
 import subprocess as sp
 from snakemake_interface_software_deployment_plugins import EnvBase, EnvSpecBase
 from snakemake_interface_common.exceptions import WorkflowError
