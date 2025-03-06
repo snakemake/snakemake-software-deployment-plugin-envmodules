@@ -1,13 +1,25 @@
 from dataclasses import dataclass
-from typing import List
+from typing import Iterable, List, Tuple
 import subprocess as sp
 from snakemake_interface_software_deployment_plugins import EnvBase, EnvSpecBase
 from snakemake_interface_common.exceptions import WorkflowError
+from snakemake_interface_software_deployment_plugins.settings import CommonSettings
 
 
-@dataclass
+common_settings = CommonSettings(provides="envmodules")
+
+
 class EnvSpec(EnvSpecBase):
-    names: List[str]
+    def __init__(self, *names: str):
+        self.names: Tuple[str] = names
+
+    def identity_attributes(self) -> Iterable[str]:
+        # The identity of the env spec is given by the names of the modules.
+        yield "names"
+
+    def source_path_attributes(self) -> Iterable[str]:
+        # no paths involved here
+        return ()
 
 
 class Env(EnvBase):
