@@ -1,6 +1,6 @@
 from typing import Iterable, Tuple
 import subprocess as sp
-from snakemake_interface_software_deployment_plugins import EnvBase, EnvSpecBase
+from snakemake_interface_software_deployment_plugins import EnvBase, EnvSpecBase, SoftwareReport
 from snakemake_interface_common.exceptions import WorkflowError
 from snakemake_interface_software_deployment_plugins.settings import CommonSettings
 
@@ -47,3 +47,8 @@ class Env(EnvBase):
         # for now. Ideally, the hash should change upon changes of what is deployed
         # in the env module.
         hash_object.update(",".join(self.spec.names).encode())
+
+    def report_software(self) -> Iterable[SoftwareReport]:
+        # An environment module is just a name, so we cannot report any software here?
+        # TODO, maybe there is some way to get software from the module?
+        return ()
