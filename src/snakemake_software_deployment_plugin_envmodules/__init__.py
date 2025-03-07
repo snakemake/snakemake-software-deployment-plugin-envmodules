@@ -14,6 +14,7 @@ common_settings = CommonSettings(provides="envmodules")
 
 class EnvSpec(EnvSpecBase):
     def __init__(self, *names: str):
+        super().__init__()
         self.names: Tuple[str] = names
 
     def identity_attributes(self) -> Iterable[str]:
