@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.4](https://github.com/snakemake/snakemake-software-deployment-plugin-envmodules/compare/v0.1.3...v0.1.4) (2025-03-14)
+
+
+### Documentation
+
+* Add short intro about environment modules ([#6](https://github.com/snakemake/snakemake-software-deployment-plugin-envmodules/issues/6)) ([edf2ed6](https://github.com/snakemake/snakemake-software-deployment-plugin-envmodules/commit/edf2ed673c2e0d5dfe1c81afd98090441dad9430))
+
 ## [0.1.3](https://github.com/snakemake/snakemake-software-deployment-plugin-envmodules/compare/v0.1.2...v0.1.3) (2025-03-08)
 
 
