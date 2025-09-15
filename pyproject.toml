@@ -43,7 +43,7 @@ coverage-report = "coverage report -m"
 [tool.pixi.feature.dev.tasks.test]
 cmd = [
     "pytest",
-    "--cov=snakemake_software_deployment_plugin_conda",
+    "--cov=snakemake_software_deployment_plugin_envmodules",
     "--cov-report=xml:coverage-report/coverage.xml",
     "--cov-report=term-missing",
     "tests/test_plugin.py",
