@@ -24,6 +24,9 @@ class EnvSpec(EnvSpecBase):
     def source_path_attributes(self) -> Iterable[str]:
         # no paths involved here
         return ()
+    
+    def __str__(self) -> str:
+        return ",".join(self.names)
 
 
 class Env(EnvBase):
@@ -36,7 +39,7 @@ class Env(EnvBase):
         if self.run_cmd("type module", stdout=sp.PIPE, stderr=sp.PIPE).returncode != 0:
             raise WorkflowError(
                 "The module command is not available. "
-                "Please make sure that the environment modules are "
+                "Please make sure that environment modules are "
                 "available on your system."
             )
 
@@ -45,7 +48,7 @@ class Env(EnvBase):
         # Unclear why that happens.
         # one might have to say 'shopt -s expand_aliases;', but that did not
         # help either...
-        return f"module purge && module load {' '.join(self.spec.names)}; {cmd}"
+        return f"module purge && module load {' '.join(self.spec.names)} && {cmd}"
 
     def record_hash(self, hash_object) -> None:
         # We just hash the names here as the best thing we can do for envmodules

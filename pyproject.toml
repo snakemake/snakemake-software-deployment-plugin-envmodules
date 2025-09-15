@@ -7,11 +7,12 @@ readme = "README.md"
 requires-python = ">=3.11,<4.0"
 dependencies = [
     "snakemake-interface-common (>=1.17.4,<2.0.0)",
-    "snakemake-interface-software-deployment-plugins (>=0.7.5,<1.0)",
+    #"snakemake-interface-software-deployment-plugins (>=0.7.5,<1.0)",
 ]
 
 [tool.pixi.pypi-dependencies]
 snakemake-software-deployment-plugin-envmodules = { path = ".", editable = true }
+snakemake-interface-software-deployment-plugins = { path = "../snakemake-interface-software-deployment-plugins", editable = true }
 
 [project.urls]
 repository = "https://github.com/snakemake/snakemake-software-deployment-plugin-envmodules"
