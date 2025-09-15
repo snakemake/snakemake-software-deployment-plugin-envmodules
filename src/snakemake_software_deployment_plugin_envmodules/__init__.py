@@ -36,6 +36,7 @@ class Env(EnvBase):
 
     @EnvBase.once
     def check(self) -> None:
+        print(self.shell_executable)
         res = self.run_cmd("echo $PATH && command -v module && module --help && type module", stdout=sp.PIPE, stderr=sp.STDOUT)
         if res.returncode != 0:
             raise WorkflowError(
