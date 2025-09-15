@@ -45,7 +45,7 @@ jobs:
           sudo apt-get install -y environment-modules
 
       - name: Run pytest
-        shell: bash
+        shell: bash -el {0}
         run: |
           source /etc/profile.d/modules.sh
           command -v module
