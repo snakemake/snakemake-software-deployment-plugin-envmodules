@@ -36,11 +36,12 @@ class Env(EnvBase):
 
     @EnvBase.once
     def check(self) -> None:
-        if self.run_cmd("type module", stdout=sp.PIPE, stderr=sp.PIPE).returncode != 0:
+        res = self.run_cmd("module --help && type module", stdout=sp.PIPE, stderr=sp.STDOUT)
+        if res.returncode != 0:
             raise WorkflowError(
                 "The module command is not available. "
                 "Please make sure that environment modules are "
-                "available on your system."
+                f"available on your system: {res.stdout.decode()}"
             )
 
     def decorate_shellcmd(self, cmd: str) -> str:
