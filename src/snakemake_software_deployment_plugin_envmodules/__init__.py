@@ -1,4 +1,4 @@
-from typing import Iterable, Tuple
+from typing import Iterable
 import subprocess as sp
 from snakemake_interface_software_deployment_plugins import (
     EnvBase,
@@ -24,7 +24,7 @@ class EnvSpec(EnvSpecBase):
     def source_path_attributes(self) -> Iterable[str]:
         # no paths involved here
         return ()
-    
+
     def __str__(self) -> str:
         return ",".join(self.names)
 
