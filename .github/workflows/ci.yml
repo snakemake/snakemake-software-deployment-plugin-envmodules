@@ -47,7 +47,6 @@ jobs:
       - name: Run pytest
         shell: bash -el {0}
         run: |
-          source /etc/profile.d/modules.sh
           command -v module
           pixi run test -v
 
