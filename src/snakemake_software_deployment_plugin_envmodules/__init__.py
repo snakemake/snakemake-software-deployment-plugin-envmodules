@@ -1,4 +1,5 @@
-from typing import Iterable, Tuple
+import shlex
+from typing import Iterable
 import subprocess as sp
 from snakemake_interface_software_deployment_plugins import (
     EnvBase,
@@ -15,7 +16,7 @@ common_settings = CommonSettings(provides="envmodules")
 class EnvSpec(EnvSpecBase):
     def __init__(self, *names: str):
         super().__init__()
-        self.names: Tuple[str] = names
+        self.names: tuple[str, ...] = tuple(names)
 
     def identity_attributes(self) -> Iterable[str]:
         # The identity of the env spec is given by the names of the modules.
@@ -25,6 +26,9 @@ class EnvSpec(EnvSpecBase):
         # no paths involved here
         return ()
 
+    def __str__(self) -> str:
+        return ",".join(self.names)
+
 
 class Env(EnvBase):
     def __post_init__(self):
@@ -33,11 +37,12 @@ class Env(EnvBase):
 
     @EnvBase.once
     def check(self) -> None:
-        if self.run_cmd("type module", stdout=sp.PIPE, stderr=sp.PIPE).returncode != 0:
+        res = self.run_cmd("type module", stdout=sp.PIPE, stderr=sp.STDOUT)
+        if res.returncode != 0:
             raise WorkflowError(
                 "The module command is not available. "
-                "Please make sure that the environment modules are "
-                "available on your system."
+                "Please make sure that environment modules are "
+                f"available on your system: {res.stdout.decode()}"
             )
 
     def decorate_shellcmd(self, cmd: str) -> str:
@@ -45,7 +50,7 @@ class Env(EnvBase):
         # Unclear why that happens.
         # one might have to say 'shopt -s expand_aliases;', but that did not
         # help either...
-        return f"module purge && module load {' '.join(self.spec.names)}; {cmd}"
+        return f"module purge && module load {' '.join(shlex.quote(name) for name in self.spec.names)} && {cmd}"
 
     def record_hash(self, hash_object) -> None:
         # We just hash the names here as the best thing we can do for envmodules
