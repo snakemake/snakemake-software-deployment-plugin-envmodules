@@ -37,9 +37,7 @@ class Env(EnvBase):
 
     @EnvBase.once
     def check(self) -> None:
-        res = self.run_cmd(
-            "type module", stdout=sp.PIPE, stderr=sp.STDOUT
-        )
+        res = self.run_cmd("type module", stdout=sp.PIPE, stderr=sp.STDOUT)
         if res.returncode != 0:
             raise WorkflowError(
                 "The module command is not available. "
