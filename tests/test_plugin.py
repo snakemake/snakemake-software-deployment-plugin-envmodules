@@ -14,7 +14,6 @@ os.environ["MODULEPATH"] = "tests/modules"
 
 class Test(TestSoftwareDeploymentBase):
     __test__ = True  # activate automatic testing
-    shell_executable = "bash"
 
     def get_software_deployment_provider_settings(
         self,
