@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.5](https://github.com/snakemake/snakemake-software-deployment-plugin-envmodules/compare/v0.1.4...v0.1.5) (2025-09-19)
+
+
+### Bug Fixes
+
+* update to latest interface ([#10](https://github.com/snakemake/snakemake-software-deployment-plugin-envmodules/issues/10)) ([1b472a4](https://github.com/snakemake/snakemake-software-deployment-plugin-envmodules/commit/1b472a44d33bf245298b33db937b94e60cfdce68))
+* update to latest interface ([#8](https://github.com/snakemake/snakemake-software-deployment-plugin-envmodules/issues/8)) ([87d0e9d](https://github.com/snakemake/snakemake-software-deployment-plugin-envmodules/commit/87d0e9d6958924ae5b6a169073c9ea6e53995dd9))
+
 ## [0.1.4](https://github.com/snakemake/snakemake-software-deployment-plugin-envmodules/compare/v0.1.3...v0.1.4) (2025-03-14)
 
 
