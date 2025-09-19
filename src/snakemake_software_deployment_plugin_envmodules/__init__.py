@@ -1,3 +1,4 @@
+import shlex
 from typing import Iterable
 import subprocess as sp
 from snakemake_interface_software_deployment_plugins import (
@@ -37,7 +38,7 @@ class Env(EnvBase):
     @EnvBase.once
     def check(self) -> None:
         res = self.run_cmd(
-            "module --help && type module", stdout=sp.PIPE, stderr=sp.STDOUT
+            "type module", stdout=sp.PIPE, stderr=sp.STDOUT
         )
         if res.returncode != 0:
             raise WorkflowError(
@@ -51,7 +52,7 @@ class Env(EnvBase):
         # Unclear why that happens.
         # one might have to say 'shopt -s expand_aliases;', but that did not
         # help either...
-        return f"module purge && module load {' '.join(self.spec.names)} && {cmd}"
+        return f"module purge && module load {' '.join(shlex.quote(name) for name in self.spec.names)} && {cmd}"
 
     def record_hash(self, hash_object) -> None:
         # We just hash the names here as the best thing we can do for envmodules
