@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.6](https://github.com/snakemake/snakemake-software-deployment-plugin-envmodules/compare/v0.1.5...v0.1.6) (2026-02-19)
+
+
+### Performance Improvements
+
+* bump interface to latest version ([c794b0b](https://github.com/snakemake/snakemake-software-deployment-plugin-envmodules/commit/c794b0b715878e831e679c5b0cfb30dbb7ae09a5))
+
 ## [0.1.5](https://github.com/snakemake/snakemake-software-deployment-plugin-envmodules/compare/v0.1.4...v0.1.5) (2025-09-19)
 
 
