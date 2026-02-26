@@ -31,6 +31,8 @@ class EnvSpec(EnvSpecBase):
 
 
 class Env(EnvBase):
+    spec: EnvSpec
+
     def __post_init__(self):
         # Check if the module command is available
         self.check()
