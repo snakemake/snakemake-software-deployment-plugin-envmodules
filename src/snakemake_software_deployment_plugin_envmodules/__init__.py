@@ -1,5 +1,6 @@
 import shlex
 from typing import Iterable
+from pathlib import Path
 import subprocess as sp
 from snakemake_interface_software_deployment_plugins import (
     EnvBase,
@@ -53,6 +54,16 @@ class Env(EnvBase):
         # one might have to say 'shopt -s expand_aliases;', but that did not
         # help either...
         return f"module purge && module load {' '.join(shlex.quote(name) for name in self.spec.names)} && {cmd}"
+
+    def contains_executable(self, executable: str) -> bool:
+        path = (
+            self.run_cmd(
+                self.decorate_shellcmd("echo $PATH"), capture_output=True, check=True
+            )
+            .stdout.decode()
+            .split(":")[0]
+        )
+        return (Path(path) / executable).exists()
 
     def record_hash(self, hash_object) -> None:
         # We just hash the names here as the best thing we can do for envmodules
