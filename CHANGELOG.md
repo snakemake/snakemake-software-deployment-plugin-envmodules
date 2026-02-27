@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.0](https://github.com/snakemake/snakemake-software-deployment-plugin-envmodules/compare/v0.1.6...v0.2.0) (2026-02-26)
+
+
+### Features
+
+* implement test for executable being contained in env ([9f41d83](https://github.com/snakemake/snakemake-software-deployment-plugin-envmodules/commit/9f41d8376d6a8e9ea3c37e4cd338a524dfd2f26a))
+
+
+### Bug Fixes
+
+* adapt to latest interface ([a338cd5](https://github.com/snakemake/snakemake-software-deployment-plugin-envmodules/commit/a338cd5d97af915c8a7434d5a8a9fbba8003420d))
+
 ## [0.1.6](https://github.com/snakemake/snakemake-software-deployment-plugin-envmodules/compare/v0.1.5...v0.1.6) (2026-02-19)
 
 
