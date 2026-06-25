@@ -19,11 +19,13 @@ class EnvSpec(EnvSpecBase):
         super().__init__()
         self.names: tuple[str, ...] = tuple(names)
 
-    def identity_attributes(self) -> Iterable[str]:
+    @classmethod
+    def identity_attributes(cls) -> Iterable[str]:
         # The identity of the env spec is given by the names of the modules.
         yield "names"
 
-    def source_path_attributes(self) -> Iterable[str]:
+    @classmethod
+    def source_path_attributes(cls) -> Iterable[str]:
         # no paths involved here
         return ()
 
