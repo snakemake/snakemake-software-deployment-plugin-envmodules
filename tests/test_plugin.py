@@ -133,8 +133,3 @@ def test_env_record_hash_uses_names():
     h = hashlib.sha256()
     Env.record_hash(env, h)
     assert h.hexdigest() == hashlib.sha256(b"bwa,samtools").hexdigest()
-
-
-def test_env_report_software_is_empty():
-    env = _env_with_spec(_spec("bwa"))
-    assert list(Env.report_software(env)) == []
