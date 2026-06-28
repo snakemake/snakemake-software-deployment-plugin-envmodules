@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/snakemake/snakemake-software-deployment-plugin-envmodules/compare/v0.2.0...v0.2.1) (2026-06-28)
+
+
+### Bug Fixes
+
+* make identity_attributes/source_path_attributes classmethods ([#15](https://github.com/snakemake/snakemake-software-deployment-plugin-envmodules/issues/15)) ([58af01a](https://github.com/snakemake/snakemake-software-deployment-plugin-envmodules/commit/58af01a036ddc11bc95597d7da282b0b4710d6b6))
+
 ## [0.2.0](https://github.com/snakemake/snakemake-software-deployment-plugin-envmodules/compare/v0.1.6...v0.2.0) (2026-02-26)
 
 
