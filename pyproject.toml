@@ -1,6 +1,6 @@
 [project]
 name = "snakemake-software-deployment-plugin-envmodules"
-version = "0.2.0"
+version = "0.2.1"
 authors = [{ name = "Johannes Köster", email = "johannes.koester@uni-due.de" }]
 description = "Software deployment plugin for Snakemake using environment modules."
 readme = "README.md"
